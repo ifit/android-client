@@ -21,7 +21,8 @@ rm -f launchdarkly-android-client/build.gradle.bak
 sed -i.bak "s/com.launchdarkly:launchdarkly-android-client:[^']*/com.launchdarkly:launchdarkly-android-client:${VERSION}/" README.md
 rm -f README.md.bak
 
-./gradlew test sourcesJar javadocJar packageRelease
+./gradlew packageRelease
+#./gradlew test sourcesJar javadocJar packageRelease
 ./gradlew uploadArchives closeAndReleaseRepository
-./gradlew publishGhPages
+#./gradlew publishGhPages
 echo "Finished android-client release."
