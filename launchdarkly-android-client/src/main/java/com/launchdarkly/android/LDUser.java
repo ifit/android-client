@@ -707,7 +707,7 @@ public class LDUser {
 
     }
 
-    static class LDUserPrivateAttributesTypeAdapter extends TypeAdapter<LDUser> {
+    static class LDUserPrivateAttributesTypeAdapter extends TypeAdapter {
 
         static final String PRIVATE_ATTRS = "privateAttrs";
 
@@ -718,7 +718,9 @@ public class LDUser {
         }
 
         @Override
-        public void write(JsonWriter out, LDUser user) throws IOException {
+        public void write(JsonWriter out, Object obj) throws IOException {
+            LDUser user = (LDUser)obj;
+
             // Unless `inlineUsersInEvents` is true, there may be no user to write.
             if (user == null) {
                 out.nullValue();
@@ -783,7 +785,7 @@ public class LDUser {
         }
 
         @Override
-        public LDUser read(JsonReader in) throws IOException {
+        public Object read(JsonReader in) throws IOException {
             return LDConfig.GSON.fromJson(in, LDUser.class);
         }
 

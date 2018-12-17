@@ -20,7 +20,7 @@ gradle.projectsEvaluated {
 
 android {
     compileSdkVersion 26
-    buildToolsVersion '26.0.2'
+    buildToolsVersion '27.0.3'
 
     defaultConfig {
         minSdkVersion 15
@@ -59,7 +59,7 @@ ext {
     supportVersion = "26.0.1"
     okhttpVersion = "3.6.0"
     eventsourceVersion = "1.8.0"
-    gsonVersion = "2.8.2"
+    gsonVersion = "2.8.1"
     testRunnerVersion = "0.5"
 }
 

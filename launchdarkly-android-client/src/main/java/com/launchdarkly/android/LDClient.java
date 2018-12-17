@@ -79,7 +79,7 @@ public class LDClient implements LDClientInterface, Closeable {
      * @param user        The user used in evaluating feature flags
      * @return a {@link Future} which will complete once the client has been initialized.
      */
-    public static synchronized Future<LDClient> init(@NonNull Application application, @NonNull LDConfig config, @NonNull LDUser user) {
+        public static synchronized Future<LDClient> init(@NonNull Application application, @NonNull LDConfig config, @NonNull LDUser user) {
 
         boolean applicationValid = validateParameter(application);
         boolean configValid = validateParameter(config);
